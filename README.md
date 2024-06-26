@@ -1,10 +1,49 @@
 # Household Power Consumption Prediction
 
-![Underwater Scene Preview](images/illustration.png)
+<p align="center">
+  <img src="images/intro.png" alt="Image 1" width="240"/>
+  <img src="images/elasticnet.png" alt="Image 2" width="400"/>
+</p>
 
-## Authors
-- Elias Ben Rhouma
-- Gabriel Mercier
+## Introduction
+Our project aims to evaluate the feasibility of predicting household electricity consumption based on meteorological data. We used two datasets and Python as our programming language due to its extensive machine learning libraries like scikit-learn and pandas. Google Colab was chosen for collaboration.
+
+## Usage
+1. You will need to to upload dataset on google drive, and merge them using our code
+   
+1.1 Connect to google drive
+```python
+  from google.colab import drive
+  drive.mount('/content/drive')
+```
+1.2 Import and merge
+```python
+paths_consumption = [
+    '/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_2007.csv',
+    '/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_2008.csv',
+    '/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_2009.csv',
+    '/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_2010.csv'
+]
+columns_conso_names=['date','time','global_active_power','global_reactive_power','voltage','global_intensity','sub_metering_1','sub_metering_2','sub_metering_3']
+
+dataframes_conso = [pd.read_csv(path,sep=';',names=columns_conso_names, low_memory=False) for path in paths_consumption]
+
+combined_df = pd.concat(dataframes_conso, ignore_index=True)
+
+combined_df.to_csv('/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_all.csv', index=False)
+```
+2. After that you will only need to import merged dataset
+
+2.1 Connect to google drive
+```python
+  from google.colab import drive
+  drive.mount('/content/drive')
+```
+2.2 Import 
+```python
+path_conso='/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_all.csv'
+df_conso=pd.read_csv(path_conso)
+```
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -21,8 +60,6 @@
    - [Regression Models](#regression-models)
    - [Conclusion and Future Work](#conclusion-and-future-work)
 
-## Introduction
-Our project aims to evaluate the feasibility of predicting household electricity consumption based on meteorological data. We used two datasets and Python as our programming language due to its extensive machine learning libraries like scikit-learn and pandas. Google Colab was chosen for collaboration.
 
 ## Data Pre-processing
 
@@ -58,5 +95,9 @@ We applied ElasticNet, RandomForestRegressor, and PolynomialFeatures regression 
 
 ### Conclusion and Future Work
 This project involved end-to-end machine learning processes including data pre-processing, feature engineering, model selection, and tuning. Future work could involve using real-time weather data from Météo France's API for real-time consumption predictions.
+
+## Authors
+- Elias Ben Rhouma
+- Gabriel Mercier
 
 
