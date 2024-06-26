@@ -1,5 +1,7 @@
 # Household Power Consumption Prediction
 
+![Underwater Scene Preview](images/illustration.png)
+
 ## Authors
 - Elias Ben Rhouma
 - Gabriel Mercier
