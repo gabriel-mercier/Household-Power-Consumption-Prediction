@@ -1,7 +1,7 @@
 # Household Power Consumption Prediction
 
 <p align="center">
-  <img src="images/intro.png" alt="Image 1" width="400"/>
+  <img src="images/intro.png" alt="Image 1" width="200"/>
   <img src="images/elasticnet.png" alt="Image 2" width="400"/>
 </p>
 
