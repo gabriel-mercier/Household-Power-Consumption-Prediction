@@ -1,6 +1,9 @@
 # Household Power Consumption Prediction
 
-![Underwater Scene Preview](images/illustration.png)
+<p align="center">
+  <img src="images/intro.png" alt="Image 1" width="400"/>
+  <img src="images/elasticnet.png" alt="Image 2" width="400"/>
+</p>
 
 ## Authors
 - Elias Ben Rhouma
