@@ -10,6 +10,7 @@ Our project aims to evaluate the feasibility of predicting household electricity
 
 ## Usage
 1. You will need to to upload dataset on google drive, and merge them using our code
+   
 1.1 Connect to google drive
 ```python
   from google.colab import drive
@@ -32,6 +33,7 @@ combined_df = pd.concat(dataframes_conso, ignore_index=True)
 combined_df.to_csv('/content/drive/MyDrive/Projet 442-1 DATA/household_power_consumption/household_power_consumption_all.csv', index=False)
 ```
 2. After that you will only need to import merged dataset
+
 2.1 Connect to google drive
 ```python
   from google.colab import drive
